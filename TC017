@@ -1,0 +1,25 @@
+package program;
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AzureMS {
+	public static ChromeDriver driver;
+
+//To check if expected file is downloaded
+	public void checkFileDownload(String downloadPath, String fileName) {
+	  File file = new File(downloadPath);
+	  File[] eachFile = file.listFiles();
+	  boolean isFilePresent=false;
+	  for (int i = 0; i < eachFile.length; i++) //Traverse through all files in the path specified
+	  {
+	      if (eachFile[i].getName().equals(fileName)) 
+	      {
+	    
